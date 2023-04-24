@@ -150,10 +150,9 @@ uint16_t DATE_CODE = 0;
    (1UL << 10) | (1UL << 11) | (1UL << 16))
 
 #elif defined(ARDUINO_attinyxy4)
-#define ALL_GPIO                                                               \
-  0x0007FFUL // this is chip dependant, for 814 we have 11 GPIO avail
-#define ALL_ADC 0b111'1100'1111 // pins that have ADC capability
-#define ALL_PWM 0b100'1110'0011 // pins that have PWM capability
+#define ALL_GPIO 0x111'1111'1111 // for 814 we have 11 GPIO available
+#define ALL_ADC  0b111'1100'1111 // pins that have ADC capability
+#define ALL_PWM  0b100'1110'0011 // pins that have PWM capability
 #endif
 
 #define INVALID_GPIO ((1UL << SDA) | (1UL << SCL) | \
