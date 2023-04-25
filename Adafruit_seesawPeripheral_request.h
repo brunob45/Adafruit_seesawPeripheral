@@ -102,7 +102,13 @@ void requestEvent(void) {
       Wire.write((g_uart_baud >> 8) & 0xFF);
       Wire.write(g_uart_baud & 0xFF);
     } else if (module_cmd == SEESAW_SERCOM_DATA) {
-      Wire.write(CONFIG_UART_SERCOM.read());
+      if (CONFIG_UART_SERCOM.available()) {
+        Wire.write(0);
+        Wire.write(CONFIG_UART_SERCOM.read());
+      } else {
+        Wire.write(0xFF);
+        Wire.write(0xFF);
+      }
     }
   }
 #endif
