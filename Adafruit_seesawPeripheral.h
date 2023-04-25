@@ -145,9 +145,11 @@ uint16_t DATE_CODE = 0;
 #elif defined(ARDUINO_attinyxy4)
 #define UART_DEBUG_RXD 4
 #define UART_DEBUG_TXD 5
-#define ALL_GPIO 0x0007FFUL // for 814 we have 11 GPIO available
-#define ALL_ADC  0x0007CFUL // pins that have ADC capability
-#define ALL_PWM  0x0004F3UL // pins that have PWM capability
+
+#define ALL_GPIO 0x7FFUL // for 814 we have 11 GPIO available
+#define ALL_ADC  0x7CFUL // pins that have ADC capability
+#define ALL_PWM  0x4F3UL // pins that have PWM capability
+
 #else
 #error "Unsupported MCU"
 #endif
